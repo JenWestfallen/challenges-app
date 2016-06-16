@@ -1,0 +1,18 @@
+<h1> <%=@challenge.name %> </h1>
+<h4> CATEGORIES: </h4>
+
+<h2> <%= @challenge.description %> </h2>
+
+  <h4> Check out this challenge! </h4>
+<% if user_signed_in? %>
+  <h2> Will you take this challenge? </h2>
+<%else %>
+  <h2>Please <%= link_to 'Sign In', '/users/sign_in' %> or <%= link_to 'Sign Up', '/users/sign_up' %> to take this  challenge! </h2> 
+
+  <%=submit_tag 'Challenge Accepted', class: "btn btn-default" %>
+<%end%>
+<% if user_signed_in? && current_user.admin %>
+  <h5><a href="/challenges/<%= @challenge.id %>/edit">Edit</a>
+  </h5>
+  <h5><%= link_to "Delete", "/challenges/#{@challenge.id}", method: :delete%> </h5>
+<%end%>

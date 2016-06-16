@@ -1,0 +1,16 @@
+<h1> Change the World with Us </h1>
+
+<div class="row">
+  <% @challenges.each do |challenge| %>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <h2> <%= link_to "#{challenge.name}", "/challenges/#{challenge.id}" %></h2>
+        
+        <h3> DESCRIPTION: <%= challenge.description %> </h3>
+
+        <br>
+      </div>
+    </div>
+  <%end%>
+</div>
+
