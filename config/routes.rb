@@ -13,4 +13,16 @@ Rails.application.routes.draw do
   patch '/challenges/:id' => 'challenges#update'
 
   delete '/challenges/:id' => 'challenges#destroy'
+
+
+  get '/participations' => 'participations#index'
+  get '/participations/new' => 'participations#new'
+
+  post '/participations' => 'participations#create'
+  get '/participations/:id' => 'participations#show'
+
+  get '/participations/:id/edit' => 'participations#edit'
+  patch '/participations/:id' => 'participations#update'
+
+  delete '/participations/:id' => 'participations#destroy'
 end

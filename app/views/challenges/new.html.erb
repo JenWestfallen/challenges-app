@@ -1,3 +1,7 @@
+<% @challenge.errors.full_messages.each do |error| %>
+  <h2><%= error %></h2>
+  <%end%>
+
 <h1> Create a New Challenge </h1>
 
 <%= form_tag '/challenges', method: :post do %>

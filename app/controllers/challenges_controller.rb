@@ -12,21 +12,22 @@ class ChallengesController < ApplicationController
   end
 
   def create
-    @challenge = Challenge.create(
+    @challenge = Challenge.new(
     name: params[:name],
     start_date: params[:start_date],
     description: params[:description],
     category: params[:category]
     )
+
     if @challenge.save
-    # Image.create(image: params[:image], challenge_id: @challenge.id) if params[:image] != ""
+      # Image.create(image: params[:image], challenge_id: @challenge.id) if params[:image] != ""
 
-    flash[:success]="Challenge Created"
+      flash[:success]="Challenge Created"
 
-    redirect_to "/challenges/#{@challenge.id}"
-  else
-    render :new
-  end
+      redirect_to "/challenges/#{@challenge.id}"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -39,7 +40,7 @@ class ChallengesController < ApplicationController
       name: params[:name],
       start_date: params[:start_date],
       description: params[:description],
-      category: params[:category],
+      category: params[:category]
       )
 
       flash[:success]="Challenge Updated"

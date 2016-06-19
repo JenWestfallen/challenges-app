@@ -1,0 +1,7 @@
+<h1><%=current_user.email %>'s Challenges</h1>
+
+<% @participations.each do |participation| %>
+  <h2><%=participation.challenge.name %> </h2>
+  <h2><%=participation.challenge.description %> </h2>
+  <h2><%=participation.challenge.start_date %> </h2>
+  <%end%>
