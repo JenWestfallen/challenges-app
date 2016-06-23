@@ -1,6 +1,12 @@
 class ChallengesController < ApplicationController
   def index
+    sort_attribute = params[:sort]
+
+    if sort_attribute
+      @challenges = Challenge.order(sort_attribute)
+    else
     @challenges = Challenge.all
+    end
   end
 
   def show
@@ -20,8 +26,6 @@ class ChallengesController < ApplicationController
     )
 
     if @challenge.save
-      # Image.create(image: params[:image], challenge_id: @challenge.id) if params[:image] != ""
-
       flash[:success]="Challenge Created"
 
       redirect_to "/challenges/#{@challenge.id}"

@@ -25,4 +25,8 @@ Rails.application.routes.draw do
   patch '/participations/:id' => 'participations#update'
 
   delete '/participations/:id' => 'participations#destroy'
+
+  get '/saved_challenges' => 'possible_participations#index'
+  post 'possible_participations' => 'possible_participations#create'
+  delete 'possible_participations/:id' => 'possible_participations#destroy'
 end

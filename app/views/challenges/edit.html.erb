@@ -7,7 +7,15 @@
 </div>
 <div class="form-group">
 <%= label_tag :start_date %>
-<%= text_field_tag :start_date, @challenge.start_date %>
+<%= text_field_tag :start_date, @challenge.start_date, class: "datepicker" %>
+</div>
+<div class="form-group">
+<%= label_tag :category %>
+<%= text_field_tag :category, @challenge.category %>
+</div>
+<div class="form-group">
+<%= label_tag :category %>
+<%= text_field_tag :category, @challenge.category %>
 </div>
 <div class="form-group">
 <%= label_tag :category %>

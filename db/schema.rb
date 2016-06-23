@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160619205302) do
+ActiveRecord::Schema.define(version: 20160623022335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160619205302) do
 
   create_table "challenges", force: :cascade do |t|
     t.string   "name"
-    t.datetime "start_date"
+    t.string   "start_date"
     t.string   "category"
     t.text     "description"
     t.datetime "created_at",  null: false
@@ -56,8 +56,17 @@ ActiveRecord::Schema.define(version: 20160619205302) do
   create_table "participations", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "challenge_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "status",       default: "accepted"
+  end
+
+  create_table "possible_participations", force: :cascade do |t|
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "user_id"
+    t.integer  "challenge_id"
+    t.string   "status",       default: "saved"
   end
 
   create_table "users", force: :cascade do |t|

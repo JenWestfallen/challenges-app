@@ -7,8 +7,14 @@ class User < ApplicationRecord
   has_many :participations
   has_many :challenges, through: :participations
 
+  has_many :possible_participations
+  has_many :challenges, through: :possible_participations
 
-  def participations
-    challenges.where(status: 'accepted')
+  def saved_challenges
+    possible_participations.where(status: 'saved')
+  end
+
+  def accepted_challenges
+    participations.where(status: 'accepted')
   end
 end
