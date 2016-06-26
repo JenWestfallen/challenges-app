@@ -1,12 +1,22 @@
 class ChallengesController < ApplicationController
+  
+
   def index
+
+    @challenges = Challenge.all
     sort_attribute = params[:sort]
+    category_type = params[:category]
+
+    if category_type
+        @challenges = Challenge.find_by(name: category_type),challenges
+    end
 
     if sort_attribute
       @challenges = Challenge.order(sort_attribute)
     else
     @challenges = Challenge.all
     end
+
   end
 
   def show
@@ -22,10 +32,18 @@ class ChallengesController < ApplicationController
     name: params[:name],
     start_date: params[:start_date],
     description: params[:description],
-    category: params[:category]
+    creator_id: current_user.id
     )
 
     if @challenge.save
+      @category_array = params[:category]
+
+      @category_array.each do |categroy_num|
+        CategorizedChallenge.create(
+          challenge_id: @challenge.id, 
+          category_id: categroy_num.to_i
+          )
+      end
       flash[:success]="Challenge Created"
 
       redirect_to "/challenges/#{@challenge.id}"
@@ -44,7 +62,6 @@ class ChallengesController < ApplicationController
       name: params[:name],
       start_date: params[:start_date],
       description: params[:description],
-      category: params[:category]
       )
 
       flash[:success]="Challenge Updated"
