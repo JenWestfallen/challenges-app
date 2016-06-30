@@ -5,10 +5,10 @@ class ChallengesController < ApplicationController
 
     @challenges = Challenge.all
     sort_attribute = params[:sort]
-    category_type = params[:category]
+    category_ids = params[:category]
 
-    if category_type
-        @challenges = Challenge.find_by(name: category_type),challenges
+    if category_ids
+        @challenges = Challenge.where(id: category_ids)
     end
 
     if sort_attribute
@@ -38,10 +38,10 @@ class ChallengesController < ApplicationController
     if @challenge.save
       @category_array = params[:category]
 
-      @category_array.each do |categroy_num|
+      @category_array.each do |category_num|
         CategorizedChallenge.create(
           challenge_id: @challenge.id, 
-          category_id: categroy_num.to_i
+          category_id: category_num.to_i
           )
       end
       flash[:success]="Challenge Created"

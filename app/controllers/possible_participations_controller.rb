@@ -9,8 +9,6 @@ class PossibleParticipationsController < ApplicationController
       flash[:info] = "Check out our challenges! Save some that you might want to commit to!"
       redirect_to '/challenges'
     end
-
-    @possible_participations = PossibleParticipation.all
   end
 
   def create

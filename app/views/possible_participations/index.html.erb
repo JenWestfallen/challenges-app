@@ -1,14 +1,12 @@
 <h1> <%= current_user.email %>'s Saved Challenges </h1>
 
-<div class="row">
-  <% @challenges.each do |challenge| %>
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <h2> <%=link_to "#{challenge.name}", "/challenges/#{challenge.id}" %></h2>
+  <% @saved_challenges.each do |saved_challenge| %>
+    <h3><%=saved_challenge.challenge.name %> </h3>
+    <h3><%=saved_challenge.challenge.description %> </h3>
+    <h3><%=saved_challenge.challenge.start_date %> </h3>
 
-        <h3> DESCRIPTION: <%=challenge.description %> </h3>
-        <br>
-      </div>
-    </div>
+    <%= link_to 'Remove', "/possible_participations/#{saved_challenge.id}", method: :delete %>
   <%end%>
-</div>
+
+    <%= link_to 'Accept This Challenge', '/challenges', method: :post, class: "btn btn-default" %>
+

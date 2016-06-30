@@ -13,14 +13,22 @@
 <% if user_signed_in? %>
   <h3> Will you take this challenge? </h3>
   
-
-  <%=submit_tag 'Challenge Accepted', class: "btn btn-default"  %>
-
+      <%= form_tag '/possible_participations', method: :post do %>
+      <%= hidden_field_tag :challenge_id, @challenge.id %>
+      <%= hidden_field_tag :user_id, current_user.id %>
+      <%= submit_tag "Challenge Saved", class: "btn btn-default" %>
+      <%end%>
+      <br>
+      <%= form_tag '/participations', method: :post do %>
+      <%= hidden_field_tag :challenge_id, @challenge.id %>
+      <%= hidden_field_tag :user_id, current_user.id %>
+      <%= submit_tag "Challenge Accepted", class: "btn btn-default" %>
+      <%end%>
 <%else %>
   <h2>Please <%= link_to 'Sign In', '/users/sign_in' %> or <%= link_to 'Sign Up', '/users/sign_up' %> to take this challenge! </h2> 
 
 <%end%>
-<% if user_signed_in?%>
+<% if user_signed_in? && current_user.id == @challenge.creator_id%>
   <h5><a href="/challenges/<%= @challenge.id %>/edit">Edit</a>
   </h5>
   <h5><%= link_to "Delete", "/challenges/#{@challenge.id}", method: :delete%> </h5>

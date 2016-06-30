@@ -1,7 +1,13 @@
 <h1><%=current_user.email %>'s Challenges</h1>
 
-<% @participations.each do |participation| %>
-  <h2><%= @participation.challenge.name %> </h2>
-  <h2><%= @participation.challenge.description %> </h2>
-  <h2><%= @participation.challenge.start_date %> </h2>
+
+  <% @participations.each do |participation| %>
+    <h3><%= participation.challenge.name %> </h3>
+    <h3><%= participation.challenge.description %> </h3>
+    <h3><%= participation.challenge.start_date %> </h3>
+
+    <%= link_to 'Remove', "/participations/#{participation.id}", method: :delete %>
   <%end%>
+
+   
+ 
