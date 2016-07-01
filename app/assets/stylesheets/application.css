@@ -12,5 +12,8 @@
  *
  *= require_tree .
  *= require bootstrap-datepicker
+ *= require_animate.css
+ *= require_style.css
+ *= require_skin-orange.css
  *= require_self
  */

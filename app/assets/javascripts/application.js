@@ -10,8 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+
+//= require jquery.min.js
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
 //= require jquery_ujs
+//= require nicescroll.js
+//= require jquery.easing.min.js
+//= require flexslider.js
+//= require wow.min.js
+//= require validate.js
+//= require common.js
 //= require_tree .
