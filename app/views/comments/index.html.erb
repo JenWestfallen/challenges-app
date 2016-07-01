@@ -1,0 +1,7 @@
+<% @saved_comments.each do |comment| %>
+    <h3><%=saved_comment.message %> </h3>
+  
+    <%= link_to 'Remove', "/comments/#{omment.id}", method: :delete %>
+  <%end%>
+
+

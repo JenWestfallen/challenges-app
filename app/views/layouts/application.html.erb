@@ -49,13 +49,15 @@
       </ul>
 
 
-      <%=form_tag '/challenges', method: :post, class: "navbar-form navbar-left" do %>
+      <%=form_tag '/challenges', method: :get, class: "navbar-form navbar-left" do %>
         <div class="form-group">
-          <%= select_tag :category, options_from_collection_for_select(Category.all, 'id', 'name'), multiple: true %>
+          <%= select_tag :search_category_id, options_from_collection_for_select(Category.all, 'id', 'name') %>
         </div>
-          <%= hidden_field_tag :category_id, @category.id %>
+
       <%= submit_tag "Find Challenges", class: "btn btn-default" %>
       <%end%>
+
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

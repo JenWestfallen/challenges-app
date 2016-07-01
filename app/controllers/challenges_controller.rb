@@ -5,16 +5,14 @@ class ChallengesController < ApplicationController
 
     @challenges = Challenge.all
     sort_attribute = params[:sort]
-    category_ids = params[:category]
+    category_search_id = params[:search_category_id]
 
-    if category_ids
-        @challenges = Challenge.where(id: category_ids)
+    if category_search_id
+      @challenges = Category.find(category_search_id).challenges
     end
 
     if sort_attribute
-      @challenges = Challenge.order(sort_attribute)
-    else
-    @challenges = Challenge.all
+      @challenges = @challenges.order(sort_attribute)
     end
 
   end
@@ -80,4 +78,6 @@ class ChallengesController < ApplicationController
 
     redirect_to "/challenges"
   end
+
+
 end

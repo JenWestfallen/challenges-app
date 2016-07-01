@@ -14,4 +14,13 @@ class Challenge < ApplicationRecord
 
   has_many :images
 
+  def category
+    @category = ''
+    challenge = Challenge.find(params[:id])
+    challenge.categories.each do |category|
+      @category = category.name
+    end
+    @category
+  end
+
 end

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   delete '/challenges/:id' => 'challenges#destroy'
 
 
+
   get '/participations' => 'participations#index'
   get '/participations/new' => 'participations#new'
 
@@ -33,4 +34,13 @@ Rails.application.routes.draw do
   post '/possible_participations' => 'possible_participations#create'
   
   delete '/possible_participations/:id' => 'possible_participations#destroy'
+
+
+
+  get '/comments' => 'comments#index'
+  get '/comments/new' => 'comments#new'
+
+  post '/comments' => 'comments#create'
+
+  delete '/comments/:id' => 'comments#destroy'
 end
