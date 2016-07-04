@@ -40,15 +40,22 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       </button>
-      <li class="page-scroll"><a href="#home-slider" class="navbar-brand">Hypnos</a></li>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right">
-        <li class="page-scroll"><a href="#home-slider">Home</a></li>
-        <li class="page-scroll"><a href="#about">About</a></li>
-        <li class="page-scroll"><a href="#services">Services</a></li>
-        <li class="page-scroll"><a href="#team">Team</a></li>
-        <li class="page-scroll"><a href="#portfolio">Portfolio</a></li>
+       <li class="page-scroll"><a class="navbar-brand" href="/challenges">Happy</a></li>
+          <li class="page-scroll"><a href="/challenges">Find a Challenge</a></li>
+      <% if user_signed_in? %>
+          <li class="page-scroll"><a href="/challenges/new">New Challenge</a></li>
+          <li class="page-scroll"><%= link_to 'Sign Out', '/users/sign_out', method: :delete %></li>
+      <%else%> 
+          <li class="page-scroll"><%= link_to 'Sign Up', '/users/sign_up' %></a></li>
+          <li class="page-scroll"><%= link_to 'Sign In', '/users/sign_in' %></li>
+      <%end%>
+        
+        
+        <li class="page-scroll"><a href="/?sort=name">Sort by Challenge Name</a></li>
+        <li class="page-scroll"><a href="/?sort=start_date">Sort by Date</a></li>
         <li class="page-scroll"><a href="#clients-slider">Clients</a></li>
         <li class="page-scroll"><a href="#pricing">Pricing</a></li>
         <li class="page-scroll"><a href="#contact-page">Contact</a></li>
@@ -58,35 +65,26 @@
   </div>
 </div>
 
-<section id="home-slider" class="flexslider fullbg" style="background-image:url(http://www.wowthemes.net/demo/hypnos/img/intro.jpg); height:600px;padding:0px;">
+<section id="home-slide" class="flexslider fullbg" style="background-image:url(http://www.wowthemes.net/demo/hypnos/img/intro.jpg); height:600px;padding:0px;">
 <ul class="slides">
+
   <li class="home-slide">
   <div class="flex-caption transparent light-font center">
-    <p class="home-slide-content bounceInLeft animated" data-wow-delay="0.5s" data-wow-duration="4s">
-       This is <span class="highlight">Hypnos</span> Theme
+    <p class="home-slide swing animated" data-wow-delay="2s" data-wow-duration="4s">
+       Change the World. <span class="highlight">Reach for More Happiness.</span>
     </p>
-    <p class="home-slide-content bounceIn animated" data-wow-delay="2s" data-wow-duration="4s">
-       We <span class="highlight">love</span> it
-    </p>
-  </div>
-  </li>
-  <li class="home-slide">
-  <div class="flex-caption transparent light-font center">
-    <p class="home-slide-content swing animated" data-wow-delay="2s" data-wow-duration="4s">
-       Infinite <span class="highlight">Skin Colors</span>
-    </p>
-    <p class="home-slide-content fadeInUp animated" data-wow-delay="2s" data-wow-duration="4s" style="font-size:80px;">
-      <span class="highlight">Lots</span> of animations
+    <p class="home-slide fadeInUp animated" data-wow-delay="2s" data-wow-duration="4s" style="font-size:80px;">
+      <span class="highlight">Take</span> a Challenge.
     </p>
   </div>
   </li>
   <li class="home-slide">
   <div class="flex-caption transparent light-font center">
     <p class="home-slide-content flipInY animated">
-      <span class="highlight">Easy</span> to Customize
+      <span class="highlight">You</span> Are Important!
     </p>
     <p class="home-slide-content slideInLeft animated">
-       Clean & <span class="highlight">Modern</span>
+       Find and Spread <span class="highlight"></span> JOY!
     </p>
   </div>
   </li>
@@ -95,82 +93,28 @@
 
 <!-- ABOUT
 ================================================== -->
-<section id="about" class="graybg" style="border-top:0px;">
+<section id="find challenge" class="graybg" style="border-top:0px;">
 <div class="container">
   <div class="starter-template" style="padding-bottom:0px;">
-    <h1>About Us</h1>
+    <h1>Find a Challenge</h1>
     <div class="smallsep">
     </div>
-    <p class="lead">
-       We are especially beautiful and fully responsive.
-    </p>
+    
   </div>
   <p class="max80 wow bounceIn animated" data-wow-delay="0.1s">
-     Lorem ipsum dolor sit amet, consectetur Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor. Nulla varius consequat magna, id molestie ipsum volutpat quis. Suspendisse consectetur fringilla suctus. Pellentesque ipsum erat, facilisis ut venenatis eu, sodales vel dolor quis lacinia faucibus, orci ipsum gravida tortor.
+      
+      <%=form_tag '/challenges', method: :get, class: "navbar-form navbar-left" do %>
+        <div class="form-group">
+          <%= select_tag :search_category_id, options_from_collection_for_select(Category.all, 'id', 'name') %>
+        </div>
+
+      <%= submit_tag "Find Challenges", class: "btn btn-default" %>
+      <%end%>
   </p>
-  <br/><img src="http://www.wowthemes.net/demo/hypnos/img/devices.png" class="img-responsive pxauto wow bounceIn animatedUp" style="margin-bottom:-60px;" data-wow-delay="0.2s">
+  <br/><img src="http://www.essexinn.com/d/essexinn/media/Attractions/ChicagoSkyline.jpg.jpg" class="img-responsive pxauto wow bounceIn animatedUp" style="margin-bottom:-60px;" data-wow-delay="0.2s">
 </div>
 </section>
 
-<!-- SERVICES
-================================================== -->
-<section id="services">
-<div class="container">
-  <div class="starter-template">
-    <h1>Best Services Around</h1>
-    <div class="smallsep">
-    </div>
-    <p class="lead">
-       Loved by customers, well documented, easy to edit.<br>
-       Build your website with our professional Hypnos Theme.
-    </p>
-    <div class="col-md-12">
-      <div class="boxservice wow flipInY animated" data-wow-delay="0.1s">
-        <i class="fa fa-globe"></i>
-        <h3>Web Design</h3>
-        <p>
-           Web design encompasses many different skills and disciplines in the production and maintenance of websites.
-        </p>
-      </div>
-      <div class="boxservice wow flipInY animated" data-wow-delay="0.2s">
-        <i class="fa fa-user"></i>
-        <h3>User Experience</h3>
-        <p>
-           The different areas of web design include web graphic design; interface design; authoring; user experience design; and seo.
-        </p>
-      </div>
-      <div class="boxservice rightb wow flipInY animated" data-wow-delay="0.3s">
-        <i class="fa fa-dashboard"></i>
-        <h3>Client Side</h3>
-        <p>
-           The term web design is normally used to describe the design process relating to the front-end (client side) design of a website
-        </p>
-      </div>
-      <div class="boxservice bottomb wow flipInY animated" data-wow-delay="0.4s">
-        <i class="fa fa-cloud-download"></i>
-        <h3>Themes &amp; Templates</h3>
-        <p>
-           A web template system uses a template processor to combine web templates to form finished web pages.
-        </p>
-      </div>
-      <div class="boxservice bottomb wow flipInY animated" data-wow-delay="0.5s">
-        <i class="fa fa-trophy"></i>
-        <h3>Publishing Tools</h3>
-        <p>
-           It is a web publishing tool present in content management systems, web application frameworks, and HTML editors.
-        </p>
-      </div>
-      <div class="boxservice rightb bottomb wow flipInY animated" data-wow-delay="0.6s">
-        <i class="fa fa-microphone"></i>
-        <h3>Static &amp; Dynamic</h3>
-        <p>
-           Web templates can be used like the template of a form letter to generate "static" web pages in advance or to produce "dynamic" web pages.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
 
 <!-- TEAM
 ================================================== -->
@@ -189,7 +133,7 @@
   <div class="row">
     <div class="col-md-4">
       <div class="thumbnail wow bounceIn animated" data-wow-delay="0.1s" data-wow-duration="2s">
-        <img src="http://www.wowthemes.net/demo/calypso/img/demo/team1.jpg" alt="">
+        <img src="" alt="">
         <div class="caption">
           <h4>Ralph P. Peters</h4>
           <span class="primarycol">- Manager at Company -</span>

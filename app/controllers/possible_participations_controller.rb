@@ -23,6 +23,18 @@ class PossibleParticipationsController < ApplicationController
     redirect_to "/saved_challenges"
   end
 
+  def accept
+     @participation = Participation.create(
+        challenge_id: params[:challenge_id],
+        user_id: current_user.id,
+        status: "accepted"
+        )
+
+    session[:participation_count] = nil
+    flash[:success] = "Challenge Accepted"
+    redirect_to "/participations"
+  end
+
   def destroy
     @possible_participation = PossibleParticipation.find(params[:id])
     @possible_participation.update(status: "removed")

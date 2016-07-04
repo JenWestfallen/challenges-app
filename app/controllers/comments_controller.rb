@@ -5,22 +5,20 @@ def index
 end
 
 def new
-  @comments = Comment.new
+  @comment = Comment.new
 end
 
 def create
   @comment = Comment.new(message: params[:message])
 
   if @comment.save
-      @comment_array = params[:comment]
-
-      @comment_array.each do |comment_num|
+      
         Comment.create(
-          challenge_id: @challenge.id, 
-          user_id: comment_num.to_i
+          challenge_id: comment.challenge.id, 
+          user_id: current_user.id
           )
-      end
-      flash[:success]="Comment Saved"
+
+      flash[:success]="Comment Saved" 
 
       redirect_to "/comments/#{@comment.id}"
     else

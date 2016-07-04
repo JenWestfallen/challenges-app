@@ -17,7 +17,7 @@
       <%= hidden_field_tag :challenge_id, @challenge.id %>
       <%= hidden_field_tag :user_id, current_user.id %>
       <%= submit_tag "Challenge Saved", class: "btn btn-default" %>
-      <%end%>
+      <%end%> 
       <br>
       <%= form_tag '/participations', method: :post do %>
       <%= hidden_field_tag :challenge_id, @challenge.id %>
@@ -25,11 +25,8 @@
       <%= submit_tag "Challenge Accepted", class: "btn btn-default" %>
       <%end%>
 
-      <%= form_tag '/comments', method: :post do %>
-      <%= hidden_field_tag :challenge_id, @challenge.id %>
-      <%= hidden_field_tag :user_id, current_user.id %>
-      <%= submit_tag "Comment", class: "btn btn-default" %>
-      <%end%>
+      <a href="/comments/new">New Comment</a>
+
 <%else %>
   <h2>Please <%= link_to 'Sign In', '/users/sign_in' %> or <%= link_to 'Sign Up', '/users/sign_up' %> to take this challenge! </h2> 
 

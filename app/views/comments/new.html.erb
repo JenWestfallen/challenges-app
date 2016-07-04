@@ -1,14 +1,11 @@
-<% @comment.errors.full_messages.each do |error| %>
-  <h2><%= error %></h2>
-  <%end%>
-
-<h1> Add a Comment </h1>
+<h1> Add a Comment </h1> 
 
 <%= form_tag '/comments', method: :post do %>
 <div class="form-group">
 <%= label_tag :message %>
 <%= text_field_tag :message, @comment.message %>
 </div>
-
-<%= submit_tag 'Submit My Comment' %>
+      <%= hidden_field_tag :challenge_id, @comment.challenge.id %>
+      <%= hidden_field_tag :user_id, current_user.id %>
+ <%= submit_tag "Submit My Comment", class: "btn btn-default" %>
 <%end%>

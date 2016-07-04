@@ -18,7 +18,6 @@ class ParticipationsController < ApplicationController
         status: "accepted"
         )
 
-
     session[:participation_count] = nil
     flash[:success] = "Challenge Accepted"
     redirect_to "/participations"

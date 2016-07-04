@@ -12,6 +12,8 @@ class Challenge < ApplicationRecord
   has_many :participations
   has_many :users, through: :participations
 
+  has_many :comments
+
   has_many :images
 
   def category

@@ -1,7 +1,7 @@
-<% @saved_comments.each do |comment| %>
-    <h3><%=saved_comment.message %> </h3>
+<% @comments.each do |comment| %>
+    <h3><%=comment.message %> </h3>
   
-    <%= link_to 'Remove', "/comments/#{omment.id}", method: :delete %>
+    <%= link_to 'Remove', "/comments/#{comment.id}", method: :delete %>
   <%end%>
 
 
