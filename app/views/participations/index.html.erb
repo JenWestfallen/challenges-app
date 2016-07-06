@@ -1,13 +1,27 @@
-<h1><%=current_user.email %>'s Challenges</h1>
+<section id="participations" class="maincolorbg">
 
 
-  <% @participations.each do |participation| %>
-    <h3><%= participation.challenge.name %> </h3>
-    <h3><%= participation.challenge.description %> </h3>
-    <h3><%= participation.challenge.start_date %> </h3>
+  <h1 id="participations-list"><%=current_user.email %>'s Challenges</h1>
 
-    <%= link_to 'Remove', "/participations/#{participation.id}", method: :delete %>
-  <%end%>
+    <div class="container">
+      <% @participations.each do |participation| %>
+
+      <div class="row wow bounceIn animated" data-wow-delay="0.1s" data-wow-duration="1s">
+
+
+
+
+        <h3><%= participation.challenge.name %> </h3>
+        <h3><%= participation.challenge.description %> </h3>
+        <h3><%= participation.challenge.start_date %> </h3>
+
+        <%= link_to 'Remove', "/participations/#{participation.id}", method: :delete %>
+      <%end%>
+
+      </div>
+
+  </div>
+</section>
 
    
  

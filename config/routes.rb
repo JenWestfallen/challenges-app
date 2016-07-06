@@ -43,4 +43,11 @@ Rails.application.routes.draw do
   post '/comments' => 'comments#create'
 
   delete '/comments/:id' => 'comments#destroy'
+
+  get '/images' => 'images#index'
+  # namespace :api do 
+  #   namespace :v1 do
+  #     get ''
+  #   end
+    
 end

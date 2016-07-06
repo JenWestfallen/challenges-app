@@ -43,38 +43,38 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right">
-       <li class="page-scroll"><a class="navbar-brand" href="/challenges">Happy</a></li>
-          <li class="page-scroll"><a href="/challenges">Find a Challenge</a></li>
-      <% if user_signed_in? %>
-          <li class="page-scroll"><a href="/challenges/new">New Challenge</a></li>
+       <li class="page-scroll"><a class="navbar-brand" href="/challenges#challenge-list">Happy</a></li>
+          <li class="page-scroll"><a href="/challenges#challenge-list">Find a Challenge</a></li>
+      
+        
+        
+        <li class="page-scroll"><a href="/?sort=name#challenge-list">Sort by Challenge Name</a></li>
+        <li class="page-scroll"><a href="/?sort=start_date#challenge-list">Sort by Date</a></li>
+        <li class="page-scroll"><a href="/saved_challenges#saved-challenges-list">Saved Challenges</a></li>
+        <li class="page-scroll"><a href="/participations#participations-list">Participations</a></li>
+       
+        <% if user_signed_in? %>
+          <li class="page-scroll"><a href="/challenges/new#new-challenge-form">New Challenge</a></li>
           <li class="page-scroll"><%= link_to 'Sign Out', '/users/sign_out', method: :delete %></li>
       <%else%> 
           <li class="page-scroll"><%= link_to 'Sign Up', '/users/sign_up' %></a></li>
           <li class="page-scroll"><%= link_to 'Sign In', '/users/sign_in' %></li>
       <%end%>
-        
-        
-        <li class="page-scroll"><a href="/?sort=name">Sort by Challenge Name</a></li>
-        <li class="page-scroll"><a href="/?sort=start_date">Sort by Date</a></li>
-        <li class="page-scroll"><a href="#clients-slider">Clients</a></li>
-        <li class="page-scroll"><a href="#pricing">Pricing</a></li>
-        <li class="page-scroll"><a href="#contact-page">Contact</a></li>
       </ul>
     </div>
     <!--/.nav-collapse -->
   </div>
 </div>
-
-<section id="home-slide" class="flexslider fullbg" style="background-image:url(http://www.wowthemes.net/demo/hypnos/img/intro.jpg); height:600px;padding:0px;">
+<section id="home-slide" class="flexslider fullbg" style="background-image:url(https://parchmentplace.files.wordpress.com/2011/05/inspiration11.jpg); height:800px;padding:0px;">
 <ul class="slides">
 
   <li class="home-slide">
   <div class="flex-caption transparent light-font center">
     <p class="home-slide swing animated" data-wow-delay="2s" data-wow-duration="4s">
-       Change the World. <span class="highlight">Reach for More Happiness.</span>
+       Change the World. <span class="highlight">Grow.</span>
     </p>
     <p class="home-slide fadeInUp animated" data-wow-delay="2s" data-wow-duration="4s" style="font-size:80px;">
-      <span class="highlight">Take</span> a Challenge.
+      <span class="highlight">Reach</span> for more happiness.
     </p>
   </div>
   </li>
@@ -91,17 +91,18 @@
 </ul>
 </section>
 
-<!-- ABOUT
+<!-- SEARCH
 ================================================== -->
+
 <section id="find challenge" class="graybg" style="border-top:0px;">
 <div class="container">
   <div class="starter-template" style="padding-bottom:0px;">
-    <h1>Find a Challenge</h1>
+    <h1>Search Existing Challenges</h1>
     <div class="smallsep">
     </div>
     
   </div>
-  <p class="max80 wow bounceIn animated" data-wow-delay="0.1s">
+  <p class="max80 wow bounceIn animated" data-wow-delay="0.1s" >
       
       <%=form_tag '/challenges', method: :get, class: "navbar-form navbar-left" do %>
         <div class="form-group">
@@ -111,560 +112,16 @@
       <%= submit_tag "Find Challenges", class: "btn btn-default" %>
       <%end%>
   </p>
-  <br/><img src="http://www.essexinn.com/d/essexinn/media/Attractions/ChicagoSkyline.jpg.jpg" class="img-responsive pxauto wow bounceIn animatedUp" style="margin-bottom:-60px;" data-wow-delay="0.2s">
+  <p id="list-by-category">
+  <a href="/challenges#list-by-category"></a>
+  </p>
+  <br/><img src="http://www.essexinn.com/d/essexinn/media/Attractions/ChicagoSkyline.jpg.jpg" class="img-responsive pxauto wow bounceIn animatedUp" style="margin-bottom: -10px;" data-wow-delay="0.2s">
 </div>
 </section>
 
-
-<!-- TEAM
-================================================== -->
-<section id="team" class="maincolorbg">
-<div class="container">
-  <div class="starter-template">
-    <h1>Creative Team</h1>
-    <div class="smallsep">
-    </div>
-    <p class="lead">
-       We are Hypnos, strong winners ready to meet you.<br/>
-       Get in touch with us, you are a click away.
-       
-    </p>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <div class="thumbnail wow bounceIn animated" data-wow-delay="0.1s" data-wow-duration="2s">
-        <img src="" alt="">
-        <div class="caption">
-          <h4>Ralph P. Peters</h4>
-          <span class="primarycol">- Manager at Company -</span>
-          <p>
-             Praesent id metus ante, ut condimentum magna. Nam bibendum, felis eget.<br>
-          </p>
-          <ul class="social-icons">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail wow bounceIn animated" data-wow-delay="0.2s" data-wow-duration="2s">
-        <img src="http://www.wowthemes.net/demo/calypso/img/demo/team2.jpg" alt="">
-        <div class="caption">
-          <h4>Emma M. Coffey</h4>
-          <span class="primarycol">- Lawyer at Construct Inc -</span>
-          <p>
-             Praesent id metus ante, ut condimentum magna. Nam bibendum, felis eget.<br>
-          </p>
-          <ul class="social-icons">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="thumbnail wow bounceIn animated" data-wow-delay="0.3s" data-wow-duration="2s">
-        <img src="http://www.wowthemes.net/demo/calypso/img/demo/team3.jpg" alt="">
-        <div class="caption">
-          <h4>Eugene B. Bedwell</h4>
-          <span class="primarycol">- Owner of Biscaya -</span>
-          <p>
-             Praesent id metus ante, ut condimentum magna. Nam bibendum, felis eget.<br>
-          </p>
-          <ul class="social-icons">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- PORTFOLIO
-================================================== -->
-<section id="portfolio">
-<div class="container">
-  <div class="starter-template">
-    <h1>Portfolio</h1>
-    <div class="smallsep">
-    </div>
-    <p class="lead">
-       Perfect way to showcase your artwork, photography,<br/> or anything visual you want to show off, click me for details
-    </p>
-  </div>
-  <div class="row wow bounceIn animated" data-wow-delay="0.1s" data-wow-duration="1s">
-    <div class="col-sm-4 portfolio-item">
-      <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-      <div class="caption">
-        <div class="caption-content">
-          <i class="fa fa-link fa-2x"></i>
-        </div>
-      </div>
-      <img src="http://www.wowthemes.net/demo-vesta/wp-content/uploads/sites/12/2014/06/vestaportfolio4.jpg" class="img-responsive" alt=""/>
-      </a>
-    </div>
-    <div class="col-sm-4 portfolio-item">
-      <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-      <div class="caption">
-        <div class="caption-content">
-          <i class="fa fa-link fa-2x"></i>
-        </div>
-      </div>
-      <img src="http://www.wowthemes.net/demo-vesta/wp-content/uploads/sites/12/2014/06/vestaportfolio1.jpg" class="img-responsive" alt=""/>
-      </a>
-    </div>
-    <div class="col-sm-4 portfolio-item">
-      <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-      <div class="caption">
-        <div class="caption-content">
-          <i class="fa fa-link fa-2x"></i>
-        </div>
-      </div>
-      <img src="http://www.wowthemes.net/demo-vesta/wp-content/uploads/sites/12/2014/06/vestaportfolio6.jpg" class="img-responsive" alt=""/>
-      </a>
-    </div>
-    <div class="col-sm-4 portfolio-item">
-      <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-      <div class="caption">
-        <div class="caption-content">
-          <i class="fa fa-link fa-2x"></i>
-        </div>
-      </div>
-      <img src="http://www.wowthemes.net/demo-vesta/wp-content/uploads/sites/12/2014/06/vestaportfolio5.jpg" class="img-responsive" alt=""/>
-      </a>
-    </div>
-    <div class="col-sm-4 portfolio-item">
-      <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-      <div class="caption">
-        <div class="caption-content">
-          <i class="fa fa-link fa-2x"></i>
-        </div>
-      </div>
-      <img src="http://www.wowthemes.net/demo-vesta/wp-content/uploads/sites/12/2014/06/vestaportfolio21.jpg" class="img-responsive" alt=""/>
-      </a>
-    </div>
-    <div class="col-sm-4 portfolio-item">
-      <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-      <div class="caption">
-        <div class="caption-content">
-          <i class="fa fa-link fa-2x"></i>
-        </div>
-      </div>
-      <img src="http://www.wowthemes.net/demo-vesta/wp-content/uploads/sites/12/2014/06/vestaportfolio3.jpg" class="img-responsive" alt=""/>
-      </a>
-    </div>
-  </div>
-</div>
-</section>
-
-
-<!-- Portfolio Modals -->
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-content">
-    <div class="close-modal" data-dismiss="modal">
-      <div class="lr">
-        <div class="rl">
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="modal-body">
-            <h2>Project Title</h2>
-            <hr class="star-primary">
-            <img src="http://www.wowthemes.net/demo-vesta/wp-content/uploads/sites/12/2014/06/vestaportfolio4.jpg" class="img-responsive img-centered" alt="">
-            <p>
-               This area is used to describe your project. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
-            <ul class="list-inline item-details">
-              <li>Client: <strong><a href="#">Hypnos</a></strong>
-              </li>
-              <li>Date: <strong><a href="#">April 2014</a></strong>
-              </li>
-              <li>Service: <strong><a href="#">Web Development</a></strong>
-              </li>
-            </ul>
-            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-content">
-    <div class="close-modal" data-dismiss="modal">
-      <div class="lr">
-        <div class="rl">
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="modal-body">
-            <h2>Project Title</h2>
-            <hr class="star-primary">
-            <img src="http://www.wowthemes.net/demo-vesta/wp-content/uploads/sites/12/2014/06/vestaportfolio1.jpg" class="img-responsive img-centered" alt="">
-            <p>
-               This area is used to describe your project. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
-            <ul class="list-inline item-details">
-              <li>Client: <strong><a href="#">Hypnos</a></strong>
-              </li>
-              <li>Date: <strong><a href="#">April 2014</a></strong>
-              </li>
-              <li>Service: <strong><a href="#">Web Development</a></strong>
-              </li>
-            </ul>
-            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-content">
-    <div class="close-modal" data-dismiss="modal">
-      <div class="lr">
-        <div class="rl">
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="modal-body">
-            <h2>Project Title</h2>
-            <hr class="star-primary">
-            <img src="http://www.wowthemes.net/demo-vesta/wp-content/uploads/sites/12/2014/06/vestaportfolio6.jpg" class="img-responsive img-centered" alt="">
-            <p>
-               This area is used to describe your project. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
-            <ul class="list-inline item-details">
-              <li>Client: <strong><a href="#">Hypnos</a></strong>
-              </li>
-              <li>Date: <strong><a href="#">April 2014</a></strong>
-              </li>
-              <li>Service: <strong><a href="#">Web Development</a></strong>
-              </li>
-            </ul>
-            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-content">
-    <div class="close-modal" data-dismiss="modal">
-      <div class="lr">
-        <div class="rl">
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="modal-body">
-            <h2>Project Title</h2>
-            <hr class="star-primary">
-            <img src="http://www.wowthemes.net/demo-vesta/wp-content/uploads/sites/12/2014/06/vestaportfolio5.jpg" class="img-responsive img-centered" alt="">
-            <p>
-               This area is used to describe your project. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
-            <ul class="list-inline item-details">
-              <li>Client: <strong><a href="#">Hypnos</a></strong>
-              </li>
-              <li>Date: <strong><a href="#">April 2014</a></strong>
-              </li>
-              <li>Service: <strong><a href="#">Web Development</a></strong>
-              </li>
-            </ul>
-            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-content">
-    <div class="close-modal" data-dismiss="modal">
-      <div class="lr">
-        <div class="rl">
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="modal-body">
-            <h2>Project Title</h2>
-            <hr class="star-primary">
-            <img src="http://www.wowthemes.net/demo-vesta/wp-content/uploads/sites/12/2014/06/vestaportfolio21.jpg" class="img-responsive img-centered" alt="">
-            <p>
-               This area is used to describe your project. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
-            <ul class="list-inline item-details">
-              <li>Client: <strong><a href="#">Hypnos</a></strong>
-              </li>
-              <li>Date: <strong><a href="#">April 2014</a></strong>
-              </li>
-              <li>Service: <strong><a href="#">Web Development</a></strong>
-              </li>
-            </ul>
-            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-content">
-    <div class="close-modal" data-dismiss="modal">
-      <div class="lr">
-        <div class="rl">
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="modal-body">
-            <h2>Project Title</h2>
-            <hr class="star-primary">
-            <img src="http://www.wowthemes.net/demo-vesta/wp-content/uploads/sites/12/2014/06/vestaportfolio3.jpg" class="img-responsive img-centered" alt="">
-            <p>
-               This area is used to describe your project. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
-            <ul class="list-inline item-details">
-              <li>Client: <strong><a href="#">Hypnos</a></strong>
-              </li>
-              <li>Date: <strong><a href="#">April 2014</a></strong>
-              </li>
-              <li>Service: <strong><a href="#">Web Development</a></strong>
-              </li>
-            </ul>
-            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- END Portfolio Modals -->
-
-<!-- CLIENTS (TESTIMONIALS)
-================================================== -->
-<section class="testimonial graybg" id="clients-slider">
-<div class="container">
-  <div class="row">
-    <div class="c12">
-      <ul class="slides">
-        <li>
-        <div class="slide-text wow rollIn animated" data-wow-delay="0.1s" data-wow-duration="1s">
-          
-            <h2><span class="uppercase">Awesome Support</span></h2>
-            <img src="http://wowthemes.net/demo/salique/salique-boxed/images/temp/avatar2.png" alt="">
-            <p>
-               The support... I can only say it's awesome. You make a product and you help people out any way you can even if it means that you have to log in on their dashboard to sort out any problems that customer might have. Simply Outstanding!
-            </p>
-          
-        </div>
-        </li>
-        <li>
-        <div class="slide-text">
-          
-            <h2><span class="uppercase">Great Themes</span></h2>
-            <img src="http://wowthemes.net/demo/salique/salique-boxed/images/temp/avatar4.png" alt="">
-            <p>
-               Great themes with equally amazing customer service to go with it. Very prompt responses and very knowledgable staff that truly cares about their customer. I stand 100% behind this website and will make sure to recommend it to my friends.
-            </p>
-          
-        </div>
-        </li>
-        <li>
-        <div class="slide-text">
-          
-            <h2><span class="uppercase">Content Slider</span></h2>
-            <img src="http://wowthemes.net/demo/salique/salique-boxed/images/temp/avatar5.png" alt="">
-            <p>
-               This is a great theme for Wordpress. Great features, catchy look. Also, I have on a few occasions needed to contact the support team, and they have been extremely helpful. I'm new to navigating these things so this has been invaluable!
-            </p>
-          
-        </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- PRICING
-================================================== -->
-<section id="pricing">
-<div class="container">
-  <div class="starter-template">
-    <h1>Pricing</h1>
-    <div class="smallsep">
-    </div>
-    <p class="lead">
-      We are on a mission to create affordable themes<br/>
-      for artists, freelancers, business, and lot more
-    </p>
-  </div>
-  <div class="row pricing">
-    <div class="col-lg-3">
-      <div class="whitebox salmonborder wow bounceIn animated" data-wow-delay="0.1s" data-wow-duration="2s">
-        <div class="content">
-          <p class="price">
-             299<sup>$</sup>
-          </p>
-          <ul>
-            <li>Shopping Area</li>
-            <li>Spacious Rooms </li>
-            <li>Close to the Airport</li>
-            <li>Heart of the City</li>
-          </ul>
-          <a class="btn btn-lg"><i class="fa fa-shopping-cart"></i> Buy Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="whitebox goldborder wow bounceIn animated" data-wow-delay="0.2s" data-wow-duration="2s">
-        <div class="content best-offer">
-          <p class="price">
-             479<sup>$</sup>
-          </p>
-          <ul>
-            <li>Shopping Area</li>
-            <li>Spacious Rooms </li>
-            <li>Close to the Airport</li>
-            <li>Heart of the City</li>
-          </ul>
-          <a class="btn btn-lg"><i class="fa fa-user"></i> Sign Up</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="whitebox blueborder wow bounceIn animated" data-wow-delay="0.3s" data-wow-duration="2s">
-        <div class="content">
-          <p class="price">
-             621<sup>$</sup>
-          </p>
-          <ul>
-            <li>Shopping Area</li>
-            <li>Spacious Rooms </li>
-            <li>Close to the Airport</li>
-            <li>Heart of the City</li>
-          </ul>
-          <a class="btn btn-lg"><i class="fa fa-book"></i> Book Now</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <div class="whitebox greenborder wow bounceIn animated" data-wow-delay="0.4s" data-wow-duration="2s">
-        <div class="content">
-          <p class="price">
-             843<sup>$</sup>
-          </p>
-          <ul>
-            <li>Shopping Area</li>
-            <li>Spacious Rooms </li>
-            <li>Close to the Airport</li>
-            <li>Heart of the City</li>
-          </ul>
-          <a class="btn btn-lg"><i class="fa fa-mail-forward"></i> Add to Cart</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-
-<!-- CONTACT
-================================================== -->
-<section id="contact-page" class="maincolorbg">
-<div class="container">
-  <div class="starter-template">
-    <h1>Contact</h1>
-    <div class="smallsep">
-    </div>
-    <p class="lead">
-       Our technical support teams stand ready to assist you<br/>
-       with all of your technical questions regarding Hypnos
-    </p>
-  </div>
-  <form id="contact" name="contact" method="post">
-    <fieldset>
-      <div class="row">
-        <div class="col-md-4 wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s">
-          <label for="name" id="name">Name<span class="required">*</span></label>
-          <input type="text" name="name" id="name" size="30" value="" required/>
-        </div>
-        <div class="col-md-4 wow fadeIn animated" data-wow-delay="0.3s" data-wow-duration="2s">
-          <label for="email" id="email">Email<span class="required">*</span></label>
-          <input type="text" name="email" id="email" size="30" value="" required/>
-        </div>
-        <div class="col-md-4 wow fadeIn animated" data-wow-delay="0.5s" data-wow-duration="2s">
-          <label for="phone" id="phone">Phone</label>
-          <input type="text" name="phone" id="phone" size="30" value=""/>
-        </div>
-      </div>
-      <div class="wow fadeIn animated" data-wow-delay="0.8s" data-wow-duration="1.5" style="margin-top:15px;">
-        <label for="Message" id="message">Message<span class="required">*</span></label>
-        <textarea name="message" id="message" required></textarea>
-      </div>
-      <div class="wow fadeIn animated" data-wow-delay="1s" data-wow-duration="2s">
-        <input id="submit" type="submit" name="submit" value="Send"/>
-      </div>
-    </fieldset>
-  </form>
-  <div id="success">
-    <span>    
-    <p style="margin-top:20px;">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-       Your message was sent succssfully! I will be in touch as soon as I can.
-    </p>
-    </span>
-  </div>
-  <div id="error">
-    <span>
-    <p>
-       Something went wrong, try refreshing and submitting the form again.
-    </p>
-    </span>
-  </div>
-</div>
-</section>
-  <body>
-  <div class="container">
-  <% flash.each do |name, message| %>
-
-    <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <strong><%= name.upcase %></strong> <%= message%>
-    </div>
-  <% end %>
     <%= yield %>
+
+
     <section id="footer" class="footer">
 <div class="container">
   <div class="row">

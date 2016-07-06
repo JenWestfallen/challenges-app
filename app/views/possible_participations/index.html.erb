@@ -1,4 +1,11 @@
-<h1> <%= current_user.email %>'s Saved Challenges </h1>
+<section id="portfolio">
+<div class="container">
+  <div class="starter-template">
+    <h1>Portfolio</h1>
+    <div class="smallsep">
+    </div>
+
+<h1 id="saved-challenges-list"> <%= current_user.email %>'s Saved Challenges </h1>
 
   <% @saved_challenges.each do |saved_challenge| %>
     <h3><%=saved_challenge.challenge.name %> </h3>
@@ -9,4 +16,8 @@
   <%end%>
 
     <%= link_to 'Accept This Challenge', '/participations', method: :post, class: "btn btn-default" %>
+
+  </div>
+  </div>
+  </section>
 

@@ -21,4 +21,6 @@
 //= require wow.min.js
 //= require validate.js
 //= require common.js
+//= require angular
+//= require app
 //= require_tree .
