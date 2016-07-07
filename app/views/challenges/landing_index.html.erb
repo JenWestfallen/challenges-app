@@ -1,70 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="shortcut icon" href="img/favicon.ico">
-<title>Challenges App</title>
-<%= csrf_meta_tags %>
 
-<%= stylesheet_link_tag 'application', media: 'all' %>
-<%= javascript_include_tag 'application' %>
-<!-- Bootstrap core CSS -->
-<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-<!-- Font Awesome CSS -->
-<!-- <link href="css/font-awesome.min.css" rel="stylesheet"> -->
-<!-- Animate CSS -->
-<%= stylesheet_link_tag "animate.css", media: "all" %>
-<!-- Custom styles for this template -->
-<%= stylesheet_link_tag "style.css", media: "all" %>
-<!-- Skin color for this template -->
-<%= stylesheet_link_tag "skin-orange.css", media: "all" %>
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-</head>
-<body data-spy="scroll" data-target=".navbar-fixed-top">
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav pull-right">
-       <li class="page-scroll"><a class="navbar-brand" href="/challenges#challenge-list">Happy</a></li>
-          <li class="page-scroll"><a href="/challenges#challenge-list">Find a Challenge</a></li>
-      
-        
-        
-        <li class="page-scroll"><a href="/?sort=name#challenge-list">Sort by Challenge Name</a></li>
-        <li class="page-scroll"><a href="/?sort=start_date#challenge-list">Sort by Date</a></li>
-        <li class="page-scroll"><a href="/saved_challenges#saved-challenges-list">Saved Challenges</a></li>
-        <li class="page-scroll"><a href="/participations#participations-list">Participations</a></li>
-       
-        <% if user_signed_in? %>
-          <li class="page-scroll"><a href="/challenges/new#new-challenge-form">New Challenge</a></li>
-          <li class="page-scroll"><%= link_to 'Sign Out', '/users/sign_out', method: :delete %></li>
-      <%else%> 
-          <li class="page-scroll"><%= link_to 'Sign Up', '/users/sign_up' %></a></li>
-          <li class="page-scroll"><%= link_to 'Sign In', '/users/sign_in' %></li>
-      <%end%>
-      </ul>
-    </div>
-    <!--/.nav-collapse -->
-  </div>
-</div>
 <section id="home-slide" class="flexslider fullbg" style="background-image:url(https://parchmentplace.files.wordpress.com/2011/05/inspiration11.jpg); height:800px;padding:0px;">
 <ul class="slides">
 
@@ -123,7 +57,7 @@
 </div>
 </section>
 
-<section id="home-slide" class="flexslider fullbg" style="background-image:url(http://www.pageresource.com/wallpapers/wallpaper/abstract-color-waves-abstract.jpg); height:1800px;padding:0px;">
+<section id="home-slide" class="flexslider fullbg" style="background-image:url(http://abstractwallpapers.biz/wp-content/uploads/2012/04/abstract-colorful-bubbles-wallpaper.jpg); height:800px;padding:0px;">
 <ul class="slides">
 
   <li class="home-slide">
@@ -149,38 +83,9 @@
 </section>
 
 
-    <%= yield %>
+  
 
 
-    <section id="footer" class="footer">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <ul class="social-icons">
-        <li class="wow bounceIn animated" data-wow-delay="0.1s"><a href="#."><i class="fa fa-facebook"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.2s"><a href="#."><i class="fa fa-twitter"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.3s"><a href="#."><i class="fa fa-google-plus"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.4s"><a href="#."><i class="fa fa-dribbble"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.5s"><a href="#."><i class="fa fa-pinterest"></i></a></li>
-      </ul>
-      <p class="copyright">
-         Copyrights 2014, WowThemes.net. All rights reserved.
-      </p>
-    </div>
-  </div>
-</div>
-</section>
 
-<!-- Bootstrap core JavaScript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<%= javascript_include_tag "jquery.min.js" %>
-<%= javascript_include_tag "nicescroll.js" %>
-<%= javascript_include_tag "jquery.easing.min.js" %>
-<%= javascript_include_tag "flexslider.js" %>
-<%= javascript_include_tag "wow.min.js" %>
-<%= javascript_include_tag "validate.js" %>
-<%= javascript_include_tag "common.js" %>
-<!-- <script src="js/bootstrap.min.js"></script> -->
 </body>
 </html>

@@ -7,7 +7,7 @@
 </div>
 <div class="form-group">
 <%= label_tag :start_date %>
-<%= text_field_tag :start_date, @challenge.start_date, class: "datepicker" %>
+<%= text_field_tag :start_date, @challenge.start_date, "data-provide" => 'datepicker' %>
 </div>
 <%=form_tag '/challenges', method: :get, class: "navbar-form navbar-left" do %>
         <div class="form-group">

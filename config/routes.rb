@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'challenges#landing_index'
 
   get '/challenges' => 'challenges#index'
+  get '/challenges/landing' => 'challenges#landing_index'
   get '/challenges/new' => 'challenges#new'
 
   post '/challenges' => 'challenges#create'

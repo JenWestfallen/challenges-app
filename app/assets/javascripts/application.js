@@ -11,17 +11,19 @@
 // about supported directives.
 //
 
-//= require jquery.min.js
+
+//= require jquery
+//= require jquery_ujs
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
-//= require jquery_ujs
-//= require nicescroll.js
-//= require jquery.easing.min.js
-//= require flexslider.js
-//= require wow.min.js
-//= require validate.js
-//= require common.js
+//= require nicescroll
+//= require jquery.easing.min
+//= require flexslider
+//= require wow.min
+//= require validate
+//= require common
 //= require angular
-//= require main.js
 //= require app
 //= require_tree .
+
+
