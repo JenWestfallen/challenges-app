@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root to: 'challenges#index'
+  root to: 'challenges#landing_index'
 
   get '/challenges' => 'challenges#index'
   get '/challenges/new' => 'challenges#new'

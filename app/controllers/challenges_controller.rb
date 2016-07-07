@@ -1,5 +1,8 @@
 class ChallengesController < ApplicationController
   
+  def landing_index
+        @challenges = Challenge.all
+  end
 
   def index
 

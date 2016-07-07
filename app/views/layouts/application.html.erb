@@ -65,81 +65,11 @@
     <!--/.nav-collapse -->
   </div>
 </div>
-<section id="home-slide" class="flexslider fullbg" style="background-image:url(https://parchmentplace.files.wordpress.com/2011/05/inspiration11.jpg); height:800px;padding:0px;">
-<ul class="slides">
 
-  <li class="home-slide">
-  <div class="flex-caption transparent light-font center">
-    <p class="home-slide swing animated" data-wow-delay="2s" data-wow-duration="4s">
-       Change the World. <span class="highlight">Grow.</span>
-    </p>
-    <p class="home-slide fadeInUp animated" data-wow-delay="2s" data-wow-duration="4s" style="font-size:80px;">
-      <span class="highlight">Reach</span> for more happiness.
-    </p>
-  </div>
-  </li>
-  <li class="home-slide">
-  <div class="flex-caption transparent light-font center">
-    <p class="home-slide-content flipInY animated">
-      <span class="highlight">You</span> Are Important!
-    </p>
-    <p class="home-slide-content slideInLeft animated">
-       Find and Spread <span class="highlight"></span> JOY!
-    </p>
-  </div>
-  </li>
-</ul>
-</section>
-
-<!-- SEARCH
-================================================== -->
-
-<section id="find challenge" class="graybg" style="border-top:0px;">
-<div class="container">
-  <div class="starter-template" style="padding-bottom:0px;">
-    <h1>Search Existing Challenges</h1>
-    <div class="smallsep">
-    </div>
-    
-  </div>
-  <p class="max80 wow bounceIn animated" data-wow-delay="0.1s" >
-      
-      <%=form_tag '/challenges', method: :get, class: "navbar-form navbar-left" do %>
-        <div class="form-group">
-          <%= select_tag :search_category_id, options_from_collection_for_select(Category.all, 'id', 'name') %>
-        </div>
-
-      <%= submit_tag "Find Challenges", class: "btn btn-default" %>
-      <%end%>
-  </p>
-  <p id="list-by-category">
-  <a href="/challenges#list-by-category"></a>
-  </p>
-  <br/><img src="http://www.essexinn.com/d/essexinn/media/Attractions/ChicagoSkyline.jpg.jpg" class="img-responsive pxauto wow bounceIn animatedUp" style="margin-bottom: -10px;" data-wow-delay="0.2s">
-</div>
-</section>
-
-    <%= yield %>
+<%= yield %>
 
 
-    <section id="footer" class="footer">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <ul class="social-icons">
-        <li class="wow bounceIn animated" data-wow-delay="0.1s"><a href="#."><i class="fa fa-facebook"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.2s"><a href="#."><i class="fa fa-twitter"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.3s"><a href="#."><i class="fa fa-google-plus"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.4s"><a href="#."><i class="fa fa-dribbble"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.5s"><a href="#."><i class="fa fa-pinterest"></i></a></li>
-      </ul>
-      <p class="copyright">
-         Copyrights 2014, WowThemes.net. All rights reserved.
-      </p>
-    </div>
-  </div>
-</div>
-</section>
+
 
 <!-- Bootstrap core JavaScript
     ================================================== -->

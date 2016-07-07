@@ -22,5 +22,6 @@
 //= require validate.js
 //= require common.js
 //= require angular
+//= require main.js
 //= require app
 //= require_tree .
