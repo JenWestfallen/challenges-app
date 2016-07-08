@@ -1,13 +1,13 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
   <html>
     <head>
       <title>ChallengesApp</title>
       <%= csrf_meta_tags %>
-
       <%= stylesheet_link_tag 'application', media: 'all' %>
-      <%= javascript_include_tag 'application' %>
-    </head>
-  <nav class="navbar navbar-default">
+      <%= javascript_include_tag 'application' %> 
+    </head>  
+
+<nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -32,7 +32,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu"> -->
             <% if user_signed_in? %>
               <li><%= link_to 'Sign Out', '/users/sign_out', method: :delete %></li>
               <%else%>
@@ -62,7 +62,7 @@
     </div><!-- /.container-fluid -->
   </nav>
     <body>
-    <div class="container">
+    <!-- <div class="container"> -->
     <% flash.each do |name, message| %>
 
       <div class="alert alert-<%= name %> alert-dismissible" role="alert">
@@ -74,3 +74,4 @@
       </div>
     </body>
   </html>
+ 
