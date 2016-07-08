@@ -36,11 +36,12 @@ Rails.application.routes.draw do
   delete '/possible_participations/:id' => 'possible_participations#destroy'
 
 
-
   get '/comments' => 'comments#index'
   get '/comments/new' => 'comments#new'
 
   post '/comments' => 'comments#create'
 
   delete '/comments/:id' => 'comments#destroy'
+
+  get '/maps' => 'maps#index'
 end
