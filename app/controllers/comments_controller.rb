@@ -6,6 +6,7 @@ end
 
 def new
   @comment = Comment.new
+  @challenge = Challenge.find(params[:challenge_id])
 end
 
 def create
