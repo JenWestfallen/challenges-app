@@ -14,6 +14,7 @@
         <h3><%= participation.challenge.name %> </h3>
         <h3><%= participation.challenge.description %> </h3>
         <h3><%= participation.challenge.start_date %> </h3>
+   
 
         <%= link_to 'Remove', "/participations/#{participation.id}", method: :delete %>
       <%end%>

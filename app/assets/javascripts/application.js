@@ -19,6 +19,7 @@
 //= require nicescroll
 //= require jquery.easing.min
 //= require flexslider
+//= require social-share-button
 //= require wow.min
 //= require validate
 //= require common
