@@ -47,9 +47,6 @@ Rails.application.routes.draw do
 
   get '/images' => 'images#index'
   
-  namespace :api do 
-    namespace :v1 do
-      get ''
-    end
+  
     
 end

@@ -86,9 +86,13 @@
 </div>
 </section>
 
-
-
+<% if controller_name == 'challenges' && action_name == 'landing_index' %>
+<div class="container-fluid no-default">
+<% else %>
+<div class="container-fluid no-default main-container">
+<% end %>
     <%= yield %>
+</div>
 
 
     <section id="footer" class="footer">
