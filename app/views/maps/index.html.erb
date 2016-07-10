@@ -73,7 +73,7 @@
 
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -33.8688, lng: 151.2195},
+          center: {lat: 41.8781, lng: -87.6298},
           zoom: 13,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
@@ -97,6 +97,28 @@
           if (places.length == 0) {
             return;
           }
+
+        //places information - new stuff I added
+        var infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+
+        service.getDetails({
+          placeId: 
+        }, function(place, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            var marker = new google.maps.Marker({
+              map: map,
+              position: place.geometry.location
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                'Place ID: ' + place.place_id + '<br>' +
+                place.formatted_address + '</div>');
+              infowindow.open(map, this);
+            });
+          }
+     
+
 
           // Clear out the old markers.
           markers.forEach(function(marker) {
@@ -135,7 +157,9 @@
       }
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initAutocomplete"
+    <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=initAutocomplete"
          async defer></script>
   </body>
 </html>
+
+<p>
