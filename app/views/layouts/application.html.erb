@@ -46,19 +46,27 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav pull-right">
-       <li class="page-scroll"><a class="navbar-brand" href="/challenges/landing">Happy</a></li>
-          <li class="page-scroll"><a href="/challenges#challenge-list">Find a Challenge</a></li>
+       <li class="page-scroll"><a class="navbar-brand" href="/challenges/landing">Happy Challenge</a></li>
       
         
         
-        <li class="page-scroll"><a href="/challenges?sort=name#challenge-list">Sort by Challenge Name</a></li>
-        <li class="page-scroll"><a href="/challenges?sort=start_date#challenge-list">Sort by Date</a></li>
+        <li class="page-scroll"><a href="/challenges?sort=name#challenge-list">View All Challenges </a></li>
+        <li class="page-scroll"><a href="/challenges?sort=start_date#challenge-list">View Challenges by Date</a></li>
         <li class="page-scroll"><a href="/saved_challenges#saved-challenges-list">Saved Challenges</a></li>
         <li class="page-scroll"><a href="/participations#participations-list">Participations</a></li>
+        <li class="page-scroll"><a href="/images#images-list">Images</a></li>
        
         <% if user_signed_in? %>
           <li class="page-scroll"><a href="/challenges/new#new-challenge-form">New Challenge</a></li>
           <li class="page-scroll"><%= link_to 'Sign Out', '/users/sign_out', method: :delete %></li>
+
+      <%=form_tag '/challenges', method: :get, class: "navbar-form navbar-left" do %>
+        <div class="form-group">
+          <%= select_tag :search_category_id, options_from_collection_for_select(Category.all, 'id', 'name') %>
+        </div>
+
+      <%= submit_tag "Find Challenges", class: "btn btn-default" %>
+      <%end%>
       <%else%> 
           <li class="page-scroll"><%= link_to 'Sign Up', '/users/sign_up' %></a></li>
           <li class="page-scroll"><%= link_to 'Sign In', '/users/sign_in' %></li>
@@ -69,16 +77,6 @@
   </div>
 </div>
 
-
-
-      <%=form_tag '/challenges', method: :get, class: "navbar-form navbar-left" do %>
-        <div class="form-group">
-          <%= select_tag :search_category_id, options_from_collection_for_select(Category.all, 'id', 'name') %>
-        </div>
-
-      <%= submit_tag "Find Challenges", class: "btn btn-default" %>
-      <%end%>
-  </p>
   <p id="list-by-category">
   <a href="/challenges#list-by-category"></a>
   </p>
@@ -100,11 +98,9 @@
   <div class="row">
     <div class="col-md-12 text-center">
       <ul class="social-icons">
-        <li class="wow bounceIn animated" data-wow-delay="0.1s"><a href="#."><i class="fa fa-facebook"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.2s"><a href="#."><i class="fa fa-twitter"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.3s"><a href="#."><i class="fa fa-google-plus"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.4s"><a href="#."><i class="fa fa-dribbble"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.5s"><a href="#."><i class="fa fa-pinterest"></i></a></li>
+        <li class="wow bounceIn animated" data-wow-delay="0.1s"><a href="happy@facebook.com"><i class="fa fa-facebook"></i></a></li>
+        <li class="wow bounceIn animated" data-wow-delay="0.2s"><a href="happy"><i class="fa fa-twitter"></i></a></li>
+        <li class="wow bounceIn animated" data-wow-delay="0.3s"><a href="happy"><i class="fa fa-pinterest"></i></a></li>
       </ul>
       <p class="copyright">
          Copyrights 2014, WowThemes.net. All rights reserved.

@@ -46,7 +46,22 @@ Rails.application.routes.draw do
   delete '/comments/:id' => 'comments#destroy'
 
   get '/images' => 'images#index'
+  get '/images/new' => 'images#new'
+
+  post '/images' => 'images#create'
+  get '/images/:id' => 'images#show'
+
+  get '/images/:id/edit' => 'images#edit'
+
+  delete '/images/:id' => 'images#destroy'
   
-  
-    
+  namespace :api do
+    namespace :v1 do 
+      get '/challenges' => 'challenges#index'
+      post 'challenges' => 'challenges#create'
+      get '/challenges/:id' => 'challenges#show'
+    end
+  end
 end
+    
+
