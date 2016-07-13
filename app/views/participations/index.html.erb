@@ -3,6 +3,7 @@
 
   <h1 id="participations-list"><%=current_user.email %>'s Challenges</h1>
 
+  <h2>You have accepted <%=current_user.participations.count %> challenges!</h2>
     <div class="container">
       <% @participations.each do |participation| %>
 

@@ -33,6 +33,7 @@ class ChallengesController < ApplicationController
     name: params[:name],
     start_date: params[:start_date],
     description: params[:description],
+    url: params[:url],
     creator_id: current_user.id
     )
 
@@ -45,7 +46,9 @@ class ChallengesController < ApplicationController
           category_id: category_num.to_i
           )
       end
-      flash[:success]="Challenge Created"
+
+
+      # flash[:success]="Challenge Created"
 
       redirect_to "/challenges/#{@challenge.id}"
     else
@@ -63,6 +66,7 @@ class ChallengesController < ApplicationController
       name: params[:name],
       start_date: params[:start_date],
       description: params[:description],
+      url: params[:url]
       )
 
       flash[:success]="Challenge Updated"

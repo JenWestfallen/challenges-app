@@ -24,8 +24,8 @@
     <p class="home-slide-content slideInLeft animated">
        Find and Spread <span class="highlight">JOY!</span>
     </p>
-    <button><a href="#find-challenge">Find a Challenge</a></button>
-    <button><a href="#contact-us">Contact Us</a></button>
+    <button><a href="#find-challenge">Find a Challenge!</a></button>
+    <button><a href="#comments-list">See what others have to say!</a></button>
   </div>
   </li>
 </ul>
@@ -59,18 +59,12 @@
 </div>
 </section>
 
-<section id="contact-us" class="flexslider fullbg" style="background-image:url(http://abstractwallpapers.biz/wp-content/uploads/2012/04/abstract-colorful-bubbles-wallpaper.jpg); height:800px;padding:0px;">
+<section id="quotes" class="flexslider fullbg" style="background-image:url(http://abstractwallpapers.biz/wp-content/uploads/2012/04/abstract-colorful-bubbles-wallpaper.jpg); height:800px;padding:0px;">
 <ul class="slides">
 
   <li class="home-slide">
   <div class="flex-caption transparent light-font center">
   <br>
-    <p class="home-slide swing animated" data-wow-delay="2s" data-wow-duration="4s">
-       Connect <span class="highlight"> to Others.</span>
-    </p>
-    <p class="home-slide fadeInUp animated" data-wow-delay="2s" data-wow-duration="4s" style="font-size:80px;">
-      <span class="highlight">Effect</span> Change.
-    </p>
   </div>
   </li>
   <li class="home-slide">
@@ -78,10 +72,40 @@
     <p class="home-slide-content flipInY animated">
       <span class="highlight">Connect To Your Heart</span> 
     </p>
-    </p>
   </div>
   </li>
 </ul>
 </section>
+
+<section id="comments-list" class="flexslider fullbg" style="background-image:url(http://static1.squarespace.com/static/53837dc6e4b08193c94b567d/t/538a2eb7e4b02d6eaed1429d/1401564860150/peace-wallpaper.jpg); height:800px;padding:0px;">
+<ul class="slides">
+
+ 
+  <div class="flex-caption transparent light-font center">
+  <br>
+  <!-- <button><a href="/comments/new">Share your voice.</a></button> -->
+    
+    <p class="home-slide fadeInUp animated" data-wow-delay="2s" data-wow-duration="4s" style="font-size:80px;">
+      <span class="highlight">Empower</span>
+    </p>
+
+    <p>
+    <% @comments.each do |comment| %>
+      <%= comment.message %>
+    <%end%>
+    </p>
+  </div>
+ 
+  
+
+    <p class="home-slide-content flipInY animated">
+      <span class="highlight">Your Voice Is Powerful</span> 
+    </p></a></li>
+  </div>
+  </li>
+</ul>
+</section>
+
+
 
      <h4><%= social_share_button_tag("My Landing Page")%></h4>

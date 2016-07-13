@@ -1,9 +1,17 @@
+body {
+  background-image: url(green_cup.png);
+}
+
 .no-default {
   padding: 0;
   margin: 0;
 }
 
 #home-slide {
+  background-size: cover;
+}
+
+#comments-list {
   background-size: cover;
 }
 

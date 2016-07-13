@@ -21,7 +21,11 @@
 <%= label_tag :description %>
 <%= text_field_tag :description, @challenge.description %>
 </div>
+
+<div class="form-group">
+<%= label_tag :image %>
+<%= text_field_tag :url, @challenge.url %>
+</div>
 <%= submit_tag 'Update' %>
 <%end%>
 
-<h5><a href="/challenges/<%= @challenge.id %>/edit">Edit</a></h5>

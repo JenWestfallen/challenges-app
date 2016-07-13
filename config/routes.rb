@@ -39,7 +39,8 @@ Rails.application.routes.draw do
 
 
   get '/comments' => 'comments#index'
-  get '/challenges/:challenge_id/comments/new' => 'comments#new'
+  get '/comments/new' =>'comments#new'
+  # get '/challenges/:challenge_id/comments/new' => 'comments#new'
 
   post '/comments' => 'comments#create'
 

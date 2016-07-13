@@ -14,15 +14,19 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = Image.new(url: params[:url], creator_id: current_user.id)
+    @image = Image.new(url: params[:url])
 
     if @image.save
-      Image.create(
-        challenge_id: image.challenge.id
-        user_id: current_user.id
-        )
+
+      @image_array = params[:image]
+
+      @image_array.each do |image_num|
+        Image.create(
+          challenge_id: @challenge.id, 
+          image_id: category_num.to_i
+          )
+      
       flash[:success]="Image Saved"
-    end
       redirect_to "/images/#{@challenge.id}"
     else
       redirect_to "/images"

@@ -1,13 +1,15 @@
 <h1> <%=@challenge.name %> </h1>
 <h4> CATEGORIES:  </h4>
 <ul>
-<% @challenge.categories.each do |category| %>
-  <li><%= category.name %> </li>
+<% @challenge.category_names.each do |name| %>
+  <li><%= name %> </li>
 <%end%>
 
 <h2> DESCRIPTION: <%= @challenge.description %> </h2>
 
 <h3> DATE: <%= @challenge.start_date %> </h3>
+
+<h3>  <%= @challenge.counter %>  people have accepted this challenge.</h3>
 
 
 
@@ -33,6 +35,12 @@
 
 <%end%>
 <% if user_signed_in? && current_user.id == @challenge.creator_id%>
+<button onmouseover="makeAlert()"> Thank you!</button>
+<script>
+  function makeAlert() {
+    alert("Thank you for creating this challenge!")
+  }
+</script>
   <h5><a href="/challenges/<%= @challenge.id %>/edit">Edit</a>
   </h5>
   <h5><%= link_to "Delete", "/challenges/#{@challenge.id}", method: :delete%> </h5>

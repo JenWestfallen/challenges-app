@@ -6,7 +6,7 @@ end
 
 def new
   @comment = Comment.new
-  @challenge = Challenge.find(params[:challenge_id])
+  # @challenge = Challenge.find(params[:challenge_id])
 end
 
 def create
@@ -15,7 +15,7 @@ def create
   if @comment.save
       
         Comment.create(
-          challenge_id: comment.challenge.id, 
+          # challenge_id: comment.challenge.id, 
           user_id: current_user.id
           )
 

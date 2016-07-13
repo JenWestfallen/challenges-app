@@ -12,17 +12,18 @@ class Challenge < ApplicationRecord
   has_many :participations
   has_many :users, through: :participations
 
-  has_many :comments
-
   has_many :images
 
-  def category
-    @category = ''
-    challenge = Challenge.find(params[:id])
-    challenge.categories.each do |category|
-      @category = category.name
+  def category_names
+    category_names = []
+    categories.each do |category|
+      category_names << category.name
     end
-    @category
+    category_names
+  end
+
+  def counter
+    participations.length
   end
 
 end
