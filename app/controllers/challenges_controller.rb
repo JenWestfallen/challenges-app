@@ -2,6 +2,7 @@ class ChallengesController < ApplicationController
   
   def landing_index
         @challenges = Challenge.all
+        @comments = Comment.all
   end
 
   def index
@@ -69,7 +70,7 @@ class ChallengesController < ApplicationController
       url: params[:url]
       )
 
-      flash[:success]="Challenge Updated"
+      flash[:success]= "Challenge Updated"
 
       redirect_to "/challenges/#{@challenge.id}"
     else

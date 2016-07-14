@@ -89,11 +89,14 @@
       <span class="highlight">Empower</span>
     </p>
 
-    <p>
     <% @comments.each do |comment| %>
-      <%= comment.message %>
-    <%end%>
-    </p>
+    <ul>
+    <li><%= comment.message %></li>
+    </ul>
+    <% end %>
+
+    <p>
+    <a href="/comments"> 
   </div>
  
   

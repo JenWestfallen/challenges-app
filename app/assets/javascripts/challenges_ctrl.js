@@ -5,8 +5,9 @@
     $scope.setup = function(){
       $http.get("api/v1/challenges/json").then(function(response){
         $scope.test = response;
-      };
+      });
   };
+});
 
 
 }());

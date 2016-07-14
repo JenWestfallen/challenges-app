@@ -10,18 +10,13 @@ def new
 end
 
 def create
-  @comment = Comment.new(message: params[:message])
-
+  @comment = Comment.new(
+    message: params[:message],
+    user_id: params[:user_id]
+    )
   if @comment.save
-      
-        Comment.create(
-          # challenge_id: comment.challenge.id, 
-          user_id: current_user.id
-          )
-
-      flash[:success]="Comment Saved" 
-
-      redirect_to "/comments/#{@comment.id}"
+      flash[:success] = "Comment Saved" 
+      redirect_to "/challenges/landing#comments-list"
     else
       redirect_to "/challenges"
     end

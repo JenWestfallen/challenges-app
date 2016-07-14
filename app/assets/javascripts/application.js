@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
+//= require main.js
 //= require nicescroll
 //= require jquery.easing.min
 //= require flexslider

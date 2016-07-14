@@ -11,11 +11,11 @@
     <h3><%=saved_challenge.challenge.name %> </h3>
     <h3><%=saved_challenge.challenge.description %> </h3>
     <h3><%=saved_challenge.challenge.start_date %> </h3>
-
+    <%= link_to 'Accept This Challenge', '/participations', method: :post, class: "btn btn-default" %>
     <%= link_to 'Remove', "/possible_participations/#{saved_challenge.id}", method: :delete %>
   <%end%>
 
-    <%= link_to 'Accept This Challenge', '/participations', method: :post, class: "btn btn-default" %>
+
 
   </div>
   </div>
