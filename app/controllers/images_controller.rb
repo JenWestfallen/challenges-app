@@ -13,19 +13,23 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = Image.new(url: params[:url])
-
-    if @image.save     
+    @image = Image.create(
+      file: params[:file]
+      )
+      
       flash[:success]="Image Saved"
       redirect_to "/images/#{@image.id}"
-    else
-      redirect_to "/images"
-    end
+   
   end
+
+
+
+
 
   def destroy
     @image = Image.find(params[:id])
-    @image.destroy
+    @image.file = nil
+    @image.save
 
     flash[:warning]="Image Deleted"
 

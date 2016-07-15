@@ -32,7 +32,15 @@
          
         <br>
       </div>
-    </div>
+    <% if user_signed_in? && current_user.id == challenge.creator_id%>
+        <button1 onmouseover="makeAlert()"> Thank you!</button1>
+          <script>
+            function makeAlert() {
+            alert("Thank you for creating this challenge!")
+            }
+          </script>
+        </div>
+    <%end%>
   <%end%>
 </div>
 

@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   has_many :comments
 
+  has_many :images
+
+
+
   def saved_challenges
     possible_participations.where(status: 'saved')
   end

@@ -10,7 +10,8 @@ class ChallengesController < ApplicationController
     @challenges = Challenge.all
     sort_attribute = params[:sort]
     category_search_id = params[:search_category_id]
-
+    creator_id = params[:creator_id]
+    
     if category_search_id
       @challenges = Category.find(category_search_id).challenges
     end

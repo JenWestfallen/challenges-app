@@ -1,9 +1,12 @@
-<h1> Add a Comment </h1> 
+<h1> Add a Picture </h1> 
 
-<%= form_tag '/images', method: :post do %>
+
+
+
+
+<%= form_tag '/images', method: :post, multipart: true do %>
 <div class="form-group">
-<%= label_tag :url %>
-<%= text_field_tag :url, @image.url %>
+<%= file_field_tag :file %>
 </div>
       <%= hidden_field_tag :user_id, current_user.id %>
  <%= submit_tag "Submit My Image", class: "btn btn-default" %>
