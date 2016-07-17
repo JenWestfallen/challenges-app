@@ -27,13 +27,10 @@
         <h3> DESCRIPTION: <%= challenge.description %> </h3>
 
          <h3> DATE: <%= challenge.start_date %> </h3>
-
-
-         
-        <br>
+    
       </div>
     <% if user_signed_in? && current_user.id == challenge.creator_id%>
-        <button1 onmouseover="makeAlert()"> Thank you!</button1>
+        <button onmouseover="makeAlert()"> Thank you!</button>
           <script>
             function makeAlert() {
             alert("Thank you for creating this challenge!")
