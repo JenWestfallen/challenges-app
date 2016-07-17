@@ -1,13 +1,11 @@
 <h1> Add a Picture </h1> 
 
-
-
-
-
 <%= form_tag '/images', method: :post, multipart: true do %>
 <div class="form-group">
 <%= file_field_tag :file %>
 </div>
-      <%= hidden_field_tag :user_id, current_user.id %>
+
+<%= hidden_field_tag :user_id, current_user.id %>
+
  <%= submit_tag "Submit My Image", class: "btn btn-default" %>
 <%end%>

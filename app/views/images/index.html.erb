@@ -8,11 +8,11 @@
   <% @images.each do |image| %>
     <% if image.file %>
       <%= image_tag image.file.url %>
-      <%= image_tag image.file.url(:medium) %>
-      <%= image_tag image.file.url(:thumb) %>
     <% end %>
+    <% if current_user.id == image.user.id %>
+    <%= link_to "Delete", "/images/#{image.id}", method: :delete%>
+    <%end%>
   <% end %>
-
 
 
 

@@ -14,11 +14,12 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.create(
-      file: params[:file]
+      file: params[:file],
+      user_id: params[:user_id]
       )
       
       flash[:success]="Image Saved"
-      redirect_to "/images/#{@image.id}"
+      redirect_to "/images/"
    
   end
 
