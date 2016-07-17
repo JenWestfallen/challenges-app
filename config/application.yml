@@ -11,5 +11,3 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 
-test_api_key: "this is my token"
-test_api_secret: "this is my secret"
