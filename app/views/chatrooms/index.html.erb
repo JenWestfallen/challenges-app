@@ -1,0 +1,7 @@
+<h1 id="chatroom-list"> </h1>
+
+<% @chatrooms.each do |chatroom| %>
+    <button><%= link_to "#{chatroom.topic}", "/chatrooms/#{chatroom.id}" %> </button>
+  
+    <%= link_to 'Remove', "/chatrooms/#{chatroom.id}", method: :delete %>
+  <%end%>

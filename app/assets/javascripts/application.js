@@ -27,5 +27,6 @@
 //= require angular
 //= require app
 //= require_tree .
+//=require_tree ./channels
 
 

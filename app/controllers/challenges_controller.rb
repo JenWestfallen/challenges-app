@@ -49,7 +49,7 @@ class ChallengesController < ApplicationController
       end
 
 
-      # flash[:success]="Challenge Created"
+      flash[:success]="Challenge Created"
 
       redirect_to "/challenges/#{@challenge.id}"
     else

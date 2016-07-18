@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   has_many :comments
 
+  has_many :messages
+  has_many :chatrooms, through: :messages
+
+
   def saved_challenges
     possible_participations.where(status: 'saved')
   end

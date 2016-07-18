@@ -56,6 +56,30 @@ Rails.application.routes.draw do
 
   delete '/images/:id' => 'images#destroy'
   
+  get '/chatrooms' => 'chatrooms#index'
+  get '/chatrooms/new' => 'chatrooms#new'
+
+  post '/chatrooms' => 'chatrooms#create'
+  get '/chatrooms/:id' => 'chatrooms#show'
+
+  delete '/chatrooms/:id' => 'chatrooms#destroy'
+
+  get '/messages' => 'messages#index'
+  get '/messages/new' => 'messages#new'
+
+  post '/messages' => 'messages#create'
+  get '/messages/:id' => 'messages#show'
+
+  delete '/messages/:id' => 'messages#destroy'
+
+
+  #websocket cable requests in-process
+  mount ActionCable.server => '/cable'
+
+  resources :chatrooms, param: :id
+  resources :messages
+
+
   namespace :api do
     namespace :v1 do 
       get '/challenges' => 'challenges#index'

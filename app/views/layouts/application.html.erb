@@ -12,6 +12,7 @@
 
 <%= stylesheet_link_tag 'application', media: 'all' %>
 <%= javascript_include_tag 'application' %>
+<%= action_cable_meta_tag %>
 <!-- Bootstrap core CSS -->
 <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 <!-- Font Awesome CSS -->
@@ -58,7 +59,8 @@
             <li class="page-scroll"><a href="/saved_challenges#saved-challenges-list">Saved Challenges</a></li>
             <li class="page-scroll"><a href="/participations#participations-list">Participations</a></li>
             <li class="page-scroll"><a href="/challenges/new#new-challenge-form">New Challenge</a></li>
-            <li class="page-scroll"><a href="/comments/new">Share Your Voice</a></li>
+            <li class="page-scroll"><a href="/comments/new">Add a Comment</a></li>
+            <li class="page-scroll"><a href="/chatrooms">Chat</a></li>
             <li class="page-scroll"><%= link_to 'Sign Out', '/users/sign_out', method: :delete %></li>
      
          
@@ -90,23 +92,8 @@
 </div>
 
 
-    <section id="footer" class="footer">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <ul class="social-icons">
-        <li class="wow bounceIn animated" data-wow-delay="0.1s"><a href="happy@facebook.com"><i class="fa fa-facebook"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.2s"><a href="happy"><i class="fa fa-twitter"></i></a></li>
-        <li class="wow bounceIn animated" data-wow-delay="0.3s"><a href="happy"><i class="fa fa-pinterest"></i></a></li>
-      </ul>
-      <p class="copyright">
-         Copyrights 2014, WowThemes.net. All rights reserved.
-      </p>
-    </div>
-  </div>
-</div>
-</section>
-
+    
+      
 
 </body>
 </html>

@@ -1,0 +1,15 @@
+
+  <h1><%= @chatroom.topic %></h1>
+
+  <div id="messages">
+      <%= render @messages %>
+  </div>
+
+  <form>
+    <label> Share your ideas and/or inspiration! </label><br>
+    <input type="content" data-behavior="room_speaker">
+
+    
+    <%= submit_tag "Submit My Message", class: "btn btn-default" %>
+  </form>
+    

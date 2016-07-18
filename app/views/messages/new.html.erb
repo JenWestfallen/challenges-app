@@ -1,0 +1,13 @@
+<h1><%= @chatroom.topic %></h1>
+
+<h1> Share your ideas and/or inspiration! </h1> 
+
+<%= form_tag '/messages', method: :post do %>
+<div class="form-group">
+      <%= label_tag :content %>
+      <%= text_field_tag :content, @message.content %>
+</div>
+      <%= hidden_field_tag :user_id, current_user.id %>
+      <%= hidden_field_tag :chatroom_id, @chatroom_id %>
+      <%= submit_tag "Submit My Message", class: "btn btn-default" %>
+<%end%>
