@@ -15,6 +15,8 @@
         <h3><%= participation.challenge.name %> </h3>
         <h3><%= participation.challenge.description %> </h3>
         <h3><%= participation.challenge.start_date %> </h3>
+        <img src="<%= participation.challenge.url %>" align = "middle" width = "200">
+
    
 
         <%= link_to 'Remove', "/participations/#{participation.id}", method: :delete %>

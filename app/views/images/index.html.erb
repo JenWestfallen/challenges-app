@@ -3,12 +3,12 @@
 
 
 
-<div ng-app="app">
-  <div ng-controller="imagesCtrl">
-    {{ 1 + 1 }}
-  </div>
-</div>
 
+
+
+ <button><a href="/images/new">Share A Picture</a></button>
+
+<h1 id="image-list"> Envision </h1>
 
   <% @images.each do |image| %>
     <% if image.file %>
@@ -22,8 +22,5 @@
 
 
 
- <button><a href="/images/new">Share A Picture</a></button>
-
-<h1 id="image-list"> Envision </h1>
 
 
