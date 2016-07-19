@@ -4,6 +4,16 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
+
+  config.paperclip_defaults= {
+  storage :s3,
+  s3_region: "us-east-1"
+  s3_credentials: {
+    bucket: ENV["AWSBucket"],
+    access_key_id: ENV["AWSAccessKeyId"],
+    secret_access_key: ENV["AWSSecretKey"]
+  }
+}
   config.cache_classes = false
 
   # Do not eager load code on boot.

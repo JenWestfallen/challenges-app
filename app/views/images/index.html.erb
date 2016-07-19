@@ -1,13 +1,5 @@
 
-    <script src="/js/jquery.finaltilesgallery.js"></script>
-    <link rel="stylesheet" href="css/finaltilesgallery.css">
-
-
-    <script type="text/javascript" charset="utf-8">
-    $(document).ready(function() {
-        $('#gallery').finalTilesGallery();
-    });
-    </script>
+    
 
 
 
@@ -34,16 +26,4 @@
 
 <h1 id="image-list"> Envision </h1>
 
-<div id="gallery" class="final-tiles-gallery">
-    <div class="ftg-items">
-        <div class="tile">
 
-            <a class="tile-inner">
-              <% @images.each do |image| %>
-                <img class="item" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<%= image.file %>" />
-              <%end%>
-            </a>
-        </div>
-       
-    </div>
-</div>
