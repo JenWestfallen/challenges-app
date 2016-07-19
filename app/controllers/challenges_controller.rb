@@ -7,10 +7,17 @@ class ChallengesController < ApplicationController
 
   def index
 
+    @bucket= ENV['AWSBucket'],
+    @access_key_id= ENV['AWSAccessKeyId'],
+    @secret_access_key= ENV['AWSSecretKey']
+
+
+
     @challenges = Challenge.all
     sort_attribute = params[:sort]
     category_search_id = params[:search_category_id]
-
+    creator_id = params[:creator_id]
+    
     if category_search_id
       @challenges = Category.find(category_search_id).challenges
     end
@@ -72,7 +79,7 @@ class ChallengesController < ApplicationController
 
       flash[:success]= "Challenge Updated"
 
-      redirect_to "/challenges/#{@challenge.id}"
+      redirect_to "/challenges"
     else
       render :edit
     end

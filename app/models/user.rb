@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   has_many :messages
   has_many :chatrooms, through: :messages
+  has_many :images
 
 
   def saved_challenges

@@ -9,7 +9,9 @@
 
 <h3> DATE: <%= @challenge.start_date %> </h3>
 
-<h3>  <%= @challenge.counter %>  people have accepted this challenge.</h3>
+<h3> <%= @challenge.url0 %> </h3>
+
+<h4>  <%= @challenge.counter %>  people have accepted this challenge.</h4>
 
 
 
@@ -28,20 +30,13 @@
       <%= submit_tag "Challenge Accepted", class: "btn btn-default" %>
       <%end%>
 
-      
+      <% if current_user.id == @challenge.creator_id %>
+      <h5><a href="/challenges/<%= @challenge.id %>/edit">Edit</a></h5>
+      <h5><%= link_to "Delete", "/challenges/#{@challenge.id}", method: :delete %> </h5>
+      <%end%>
 
 <%else %>
   <h2>Please <%= link_to 'Sign In', '/users/sign_in' %> or <%= link_to 'Sign Up', '/users/sign_up' %> to take this challenge! </h2> 
 
 <%end%>
-<% if user_signed_in? && current_user.id == @challenge.creator_id%>
-<button onmouseover="makeAlert()"> Thank you!</button>
-<script>
-  function makeAlert() {
-    alert("Thank you for creating this challenge!")
-  }
-</script>
-  <h5><a href="/challenges/<%= @challenge.id %>/edit">Edit</a>
-  </h5>
-  <h5><%= link_to "Delete", "/challenges/#{@challenge.id}", method: :delete%> </h5>
-<%end%>
+
