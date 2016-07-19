@@ -3,7 +3,7 @@
 <h1> Share your ideas and/or inspiration! </h1> 
 
 <%= form_tag '/messages', method: :post do %>
-<div class="form-group">
+<div class="form-group" id="my-form">
       <%= label_tag :content %>
       <%= text_field_tag :content, @message.content %>
 </div>
