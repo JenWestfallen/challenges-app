@@ -11,12 +11,13 @@
 <h1 id="image-list"> Envision </h1>
 
   <% @images.each do |image| %>
+
     <% if image.file %>
-      <%= image_tag image.file.url %>
+
+      <IMG class = "displayed" <%= image_tag image.file.url %> 
+      
     <% end %>
-    <% if current_user.id == image.user.id %>
-    <%= link_to "Delete", "/images/#{image.id}", method: :delete%>
-    <%end%>
+
   <% end %>
 
 

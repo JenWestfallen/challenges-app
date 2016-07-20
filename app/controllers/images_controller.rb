@@ -31,6 +31,7 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
     @image.file = nil
     @image.save
+    @image.destroy
 
     flash[:warning]="Image Deleted"
 

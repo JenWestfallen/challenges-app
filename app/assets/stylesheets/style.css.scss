@@ -1,17 +1,30 @@
-// .button1 {
-//   background-color: purple;
-//   border: none;
-//   color: white;
-//   padding: 15px 32px;
-//   border-radius: 50%;
-//   text-align: center;
-//   text-decoration: none;
-//   display: inline-block;
-//   font-size: 24px;
-// }
+.button1 {
+  background-color: purple;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+}
+
 
 body {
-  background-image: url(green_cup.png);
+  background-image: url(hexellence.png);
+}
+
+body.challenges {
+  background-color: green;
+}
+
+h2 { 
+  text-align: center
+}
+
+#1 {
+  color: lightblue;
 }
 
 .no-default {
@@ -25,13 +38,17 @@ body {
 
 #comments-list {
   background-size: cover;
+  color: orange;
 }
 
 .main-container {
   margin-top: 7em;
 }
 
-img {
-  float: center;
+IMG.displayed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em;
 }
 

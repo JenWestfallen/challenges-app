@@ -8,7 +8,7 @@ connected: ->
 disconnected: -> 
 # Called when the subscription has been terminated by the server 
 received: (data) -> 
-  $('form').append('<p>' + data['message'] + '</p>')
+  $('#messages').append('<p>' + data['message'] + '</p>')
   # alert(data['message'])
 # Called when there's incoming data on the websocket for this channel 
 speak: (message) -> 
